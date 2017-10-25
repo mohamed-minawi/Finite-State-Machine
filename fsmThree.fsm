@@ -1,0 +1,19 @@
+FSM fsmThree
+VAR x, y, z, k
+States:
+a: out "State 1 fsm3", x=x+1, sleep 3, wait
+b: out "State 2 fsm3", y=y+1, sleep 3, wait
+c: out "State 3 fsm3", z=z+1, sleep 3, wait
+d: out "State 4 fsm3", k=k+1, sleep 3, wait
+e: out "Thank you for using fsmThree", out x, out y, out z, out k, run fsmTwo, end
+Transitions:
+a, b, 1
+a, a, 2
+b, a, 2
+b, b, 1
+c, a, 1
+d, d, 1
+c, d, 2
+d, c, 4
+b, d, 3
+d, e, 0
